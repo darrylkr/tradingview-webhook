@@ -27,6 +27,14 @@ def webhook():
 
     return "OK", 200
 
+@app.route('/check-env')
+def check_env():
+    return {
+        "TELEGRAM_TOKEN_SET": bool(TELEGRAM_TOKEN),
+        "CHAT_ID_SET": bool(CHAT_ID),
+        "SECRET_KEY_SET": bool(SECRET_KEY)
+    }
+
 # --- Local Dev Entry Point ---
 if __name__ == "__main__":
     app.run(debug=True)
