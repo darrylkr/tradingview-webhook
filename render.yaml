@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: tradingview-webhook
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: TELEGRAM_TOKEN
+        value: your_bot_token
+      - key: CHAT_ID
+        value: your_chat_id
+      - key: SECRET_KEY
+        value: your_secret_key
